@@ -1,0 +1,60 @@
+{
+  "name": "queue-file",
+  "short_description": "A simple file-based queue implementation for Python with thread-safe operations and persistence.",
+  "long_description": "QueueFile is a lightweight, file-based queue system designed for simplicity rather than performance. It uses file locking to ensure thread-safe operations and persists queue items as JSON-serialized objects in a file. Items are stored using jsonpickle for serialization, allowing arbitrary Python objects to be queued. The queue supports basic operations like enqueue, dequeue, size checking, and clearing, with configurable max size limits to prevent unbounded growth. It's intended for scenarios requiring simple persistent queuing without the overhead of dedicated queue systems like Redis, though it has practical limits around 10,000 items.",
+  "keywords": [
+    "queue",
+    "file-based",
+    "persistence",
+    "thread-safe",
+    "python",
+    "task-queue",
+    "file-locking",
+    "lightweight",
+    "json-serialization"
+  ],
+  "primary_language": "Python",
+  "languages": [
+    "Python",
+    "Shell"
+  ],
+  "frameworks": [
+    "jsonpickle"
+  ],
+  "modules": [
+    {
+      "path": "src/queue_file/__init__.py",
+      "description": "Package initialization file that exports the QueueFile class and defines metadata like version, author, and description."
+    },
+    {
+      "path": "src/queue_file/queue_file.py",
+      "description": "Main QueueFile implementation providing file-based queue operations with file locking, enqueue/dequeue, size tracking, clearing, and optional listening callback support."
+    },
+    {
+      "path": "tests/test_queue_file.py",
+      "description": "Unit tests covering enqueue/dequeue operations, max size enforcement, size tracking, queue clearing, and data persistence across instances."
+    },
+    {
+      "path": "benchmark.py",
+      "description": "Performance benchmarking script that measures enqueue/dequeue throughput for various queue sizes and reports timing metrics."
+    },
+    {
+      "path": "scripts/build.sh",
+      "description": "Build script for packaging and distributing the queue-file package."
+    }
+  ],
+  "git": {
+    "is_repo": true,
+    "remote_url": "https://github.com/philiporange/queue-file.git",
+    "github_name": "philiporange/queue-file",
+    "default_branch": "main",
+    "last_commit": "2024-08-11T10:07:45+01:00"
+  },
+  "stats": {
+    "files": 11,
+    "lines_of_code": 331,
+    "size_bytes": 20819
+  },
+  "generated_at": "2025-12-06T23:25:53.330212",
+  "generator_version": "1.0.0"
+}
